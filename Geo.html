@@ -7,10 +7,18 @@
     </head>
     <style>
 
-            input[type="submit"]{padding:5px 15px; background:#ccc; border:0 none;
-            cursor:pointer;
-            -webkit-border-radius: 5px;
-            border-radius: 5px; }
+            input[type="submit"]{background: #f78914; 
+            size-adjust: 200px; 
+            font-family:oblique; 
+            font-size: 10px; 
+            margin: auto; 
+            padding-left: 60px; 
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-bottom: 20px; 
+            border-radius: 10px; 
+            border-color: transparent; 
+            color: white }
             input[type="text"]{padding:5px 15px; border:2px black solid;
             cursor:pointer;
             -webkit-border-radius: 5px;
@@ -29,25 +37,39 @@
         }
         
     </style>
-
-<body background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS76IhuLfe858vCbT7XudAsFzdUJ4YkeU3FRQ&usqp=CAU">
-    <div>
-    
-        <h4 style="color: rgb(0, 0, 0);box-sizing: content-box; border: #A2B59F;">就醬點</h4>
-    
-    </div>
+    <body  bgcolor="#92CD28">
 
     <center>
-        <h3 style="font-size: 80px; margin:auto;">where are you?</h3>
+
+        <h3 style="font-size: 40px; margin:auto;color:white">where are you?</h3>
+        <input type="button" onclick="getLocation()" style="border-color: transparent; background-color:transparent;width:512px;height:512px;cursor:pointer;background-image:url('https://cdn.icon-icons.com/icons2/426/PNG/512/Map_1135px_1195280_42272.png')">
+
+
+        <p id="demo3"></p>
+ 
         <div class="demo">
-            <input type="text" placeholder="輸入文字" >
-            <a href="first1.html">
-            <input type="submit" value="確認">
+            <a href="foodtype.html">
+            <input type="submit" value="NEXT">
             </a>
         </div>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1JJylKxONWF9lSKrZEQprG0yTmgI&hl=zh-TW&ehbc=2E312F" width="640" height="480"></iframe>
 
     </center>
+    <script>
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+        }
+        var x = document.getElementById("demo3");
+
+        </script>
+        
     </body>
 
 
